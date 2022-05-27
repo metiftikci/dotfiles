@@ -4,4 +4,4 @@ set packpath+=~C:\Users\metiftikci\vimfiles\vimfiles
 
 lua require"init"
 
-source C:\Users\LENOVO\.vimrc
+source C:\Users\metiftikci\.vimrc
