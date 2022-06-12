@@ -10,6 +10,8 @@ require('packer').startup(function()
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
 
+  use 'jose-elias-alvarez/null-ls.nvim'
+
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
 
@@ -99,6 +101,21 @@ require('lspconfig')['csharp_ls'].setup {
   on_attach = on_attach,
   capabilities = capabilities
 }
+
+require('lspconfig')['tsserver'].setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
+
+require("null-ls").setup({
+    sources = {
+        require("null-ls").builtins.formatting.prettier,
+        require("null-ls").builtins.diagnostics.eslint,
+        require("null-ls").builtins.completion.spell,
+    },
+})
+
+vim.api.nvim_set_keymap('n', '<leader>p', '<cmd>lua vim.lsp.buf.format()<CR>', opts)
 
 vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope find_files<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', opts)
