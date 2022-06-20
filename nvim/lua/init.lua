@@ -15,9 +15,11 @@ require('packer').startup(function()
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
 
-  use 'tpope/vim-fugitive'
-  use 'airblade/vim-gitgutter'
   use 'tpope/vim-commentary'
+  use 'tpope/vim-fugitive'
+  use 'tpope/vim-surround'
+  use 'airblade/vim-gitgutter'
+  use 'mg979/vim-visual-multi'
 
   use {
     'nvim-telescope/telescope.nvim',
