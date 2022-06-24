@@ -26,7 +26,7 @@ require('packer').startup(function()
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use 'morhetz/gruvbox'
+  use 'sainnhe/sonokai'
 end)
 
 local cmp = require'cmp'
@@ -148,5 +148,5 @@ vim.opt.termguicolors = true                               -- True color support
 vim.opt.wildmode = {'list', 'longest'}                     -- Command-line completion mode
 vim.opt.wrap = false                                       -- Disable line wrap
 
-vim.cmd("autocmd vimenter * ++nested colorscheme gruvbox")
+vim.cmd("colorscheme sonokai")
 vim.cmd("autocmd vimenter * hi Visual cterm=NONE ctermfg=NONE ctermbg=darkgray")
