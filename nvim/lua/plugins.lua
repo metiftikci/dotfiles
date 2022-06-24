@@ -25,7 +25,8 @@ require('packer').startup(function()
   use 'tpope/vim-surround'
   use 'airblade/vim-gitgutter'
   use 'mg979/vim-visual-multi'
-  use 'lukas-reineke/indent-blankline.nvim'
 
+  use 'lukas-reineke/indent-blankline.nvim'
+  use 'ojroques/nvim-hardline'
   use 'sainnhe/sonokai'
 end)
