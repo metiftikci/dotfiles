@@ -20,6 +20,7 @@ require('packer').startup(function()
   use 'tpope/vim-surround'
   use 'airblade/vim-gitgutter'
   use 'mg979/vim-visual-multi'
+  use 'lukas-reineke/indent-blankline.nvim'
 
   use {
     'nvim-telescope/telescope.nvim',
@@ -28,6 +29,11 @@ require('packer').startup(function()
 
   use 'sainnhe/sonokai'
 end)
+
+require("indent_blankline").setup {
+    show_current_context = true,
+    show_current_context_start = true,
+}
 
 local cmp = require'cmp'
 
@@ -132,6 +138,7 @@ vim.opt.ignorecase = true                                  -- Ignore case
 vim.opt.joinspaces = false                                 -- No double spaces with join
 vim.opt.list = true                                        -- Show some invisible characters
 vim.opt.listchars = vim.opt.listchars + "space:."          -- Show dot for space
+vim.opt.listchars = vim.opt.listchars + "eol:↴"            -- Show end of line char
 vim.opt.number = true                                      -- Show line numbers
 vim.opt.relativenumber = true                              -- Relative line numbers
 vim.opt.scrolloff = 4                                      -- Lines of context
