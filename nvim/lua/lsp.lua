@@ -78,10 +78,12 @@ require('lspconfig')['tsserver'].setup {
   capabilities = capabilities
 }
 
-require("null-ls").setup({
+local null_ls = require("null-ls")
+null_ls.setup({
     sources = {
-        require("null-ls").builtins.formatting.prettier,
-        require("null-ls").builtins.diagnostics.eslint,
-        require("null-ls").builtins.completion.spell,
+        null_ls.builtins.diagnostics.eslint,
+        null_ls.builtins.diagnostics.editorconfig_checker,
+        null_ls.builtins.formatting.eslint,
+        null_ls.builtins.formatting.prettier,
     },
 })
