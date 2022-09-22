@@ -25,6 +25,7 @@ require('packer').startup(function()
   use 'tpope/vim-surround'
   use 'airblade/vim-gitgutter'
   use 'mg979/vim-visual-multi'
+  use 'editorconfig/editorconfig-vim'
 
   use 'lukas-reineke/indent-blankline.nvim'
   use 'ojroques/nvim-hardline'
