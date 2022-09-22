@@ -20,9 +20,25 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
-  }, {
     { name = 'buffer' },
-  })
+  }),
+  formatting = {
+    format = function(entry, vim_item)
+      vim_item.menu = ({
+        buffer = "[Buffer]",
+        nvim_lsp = "[LSP]",
+        luasnip = "[LuaSnip]",
+        nvim_lua = "[Lua]",
+        latex_symbols = "[Latex]",
+      })[entry.source.name]
+
+      return vim_item
+    end
+  },
+  experimental = {
+    native_menu = false,
+    ghost_text = true,
+  }
 })
 
 cmp.setup.cmdline('/', {
@@ -82,7 +98,6 @@ local null_ls = require("null-ls")
 null_ls.setup({
     sources = {
         null_ls.builtins.diagnostics.eslint,
-        null_ls.builtins.diagnostics.editorconfig_checker,
         null_ls.builtins.formatting.eslint,
         null_ls.builtins.formatting.prettier,
     },
