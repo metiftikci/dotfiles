@@ -1,3 +1,13 @@
+require('telescope').setup{
+  extensions = {
+    ['ui-select'] = {
+      require('telescope.themes').get_dropdown{},
+    },
+  },
+}
+require('telescope').load_extension('file_browser')
+require('telescope').load_extension('ui-select')
+
 local opts = { noremap=true, silent=true }
 
 vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope find_files<CR>', opts)

@@ -1,4 +1,4 @@
-local cmp = require'cmp'
+local cmp = require('cmp')
 
 cmp.setup({
   snippet = {
@@ -25,11 +25,11 @@ cmp.setup({
   formatting = {
     format = function(entry, vim_item)
       vim_item.menu = ({
-        buffer = "[Buffer]",
-        nvim_lsp = "[LSP]",
-        luasnip = "[LuaSnip]",
-        nvim_lua = "[Lua]",
-        latex_symbols = "[Latex]",
+        buffer = '[Buffer]',
+        nvim_lsp = '[LSP]',
+        luasnip = '[LuaSnip]',
+        nvim_lua = '[Lua]',
+        latex_symbols = '[Latex]',
       })[entry.source.name]
 
       return vim_item
@@ -57,7 +57,7 @@ cmp.setup.cmdline(':', {
   })
 })
 
-local opts = { noremap=true, silent=true }
+local opts = { noremap = true, silent = true }
 
 vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
@@ -94,11 +94,16 @@ require('lspconfig')['tsserver'].setup {
   capabilities = capabilities
 }
 
-local null_ls = require("null-ls")
+require('lspconfig')['sumneko_lua'].setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
+
+local null_ls = require('null-ls')
 null_ls.setup({
-    sources = {
-        null_ls.builtins.diagnostics.eslint,
-        null_ls.builtins.formatting.eslint,
-        null_ls.builtins.formatting.prettier,
-    },
+  sources = {
+    null_ls.builtins.diagnostics.eslint,
+    null_ls.builtins.formatting.eslint,
+    null_ls.builtins.formatting.prettier,
+  },
 })
