@@ -1,0 +1,8 @@
+cursor:
+  style:
+    blinking: Always
+  blink_interval: 500
+font:
+  normal:
+    family: Roboto Mono for Powerline
+  size: 12
