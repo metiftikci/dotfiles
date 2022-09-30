@@ -5,4 +5,5 @@ cursor:
 font:
   normal:
     family: Roboto Mono for Powerline
+    # family: JetBrainsMono Nerd Font
   size: 12
