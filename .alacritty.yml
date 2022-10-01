@@ -7,3 +7,5 @@ font:
     family: Roboto Mono for Powerline
     # family: JetBrainsMono Nerd Font
   size: 12
+key_bindings:
+- { key: Space, mods: Control, chars: "\x00" }
