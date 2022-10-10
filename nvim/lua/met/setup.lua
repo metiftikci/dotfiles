@@ -3,3 +3,5 @@ require('indent_blankline').setup {
   show_current_context_start = false,
 }
 require('hardline').setup {}
+require('blame_line').setup {}
+require('gitsigns').setup {}

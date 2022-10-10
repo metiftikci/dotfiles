@@ -24,8 +24,9 @@ require('packer').startup(function()
 
   use 'tpope/vim-commentary'
   use 'tpope/vim-fugitive'
+  use 'lewis6991/gitsigns.nvim'
+  use 'braxtons12/blame_line.nvim'
   use 'tpope/vim-surround'
-  use 'airblade/vim-gitgutter'
   use 'mg979/vim-visual-multi'
 
   use {
