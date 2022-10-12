@@ -12,6 +12,7 @@ require('packer').startup(function()
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
+  use 'Issafalcon/lsp-overloads.nvim'
 
   use 'jose-elias-alvarez/null-ls.nvim'
 
