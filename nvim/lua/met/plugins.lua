@@ -12,9 +12,9 @@ require('packer').startup(function()
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
-  use 'Issafalcon/lsp-overloads.nvim'
 
   use 'jose-elias-alvarez/null-ls.nvim'
+  use 'jose-elias-alvarez/typescript.nvim'
 
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
@@ -25,29 +25,21 @@ require('packer').startup(function()
 
   use 'tpope/vim-commentary'
   use 'tpope/vim-fugitive'
+  use 'tpope/vim-surround'
+
   use 'lewis6991/gitsigns.nvim'
   use 'braxtons12/blame_line.nvim'
-  use 'tpope/vim-surround'
   use 'mg979/vim-visual-multi'
-
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
-  }
-  use 'nvim-treesitter/nvim-treesitter-textobjects'
-  use 'nvim-treesitter/nvim-treesitter-context'
   use 'lukas-reineke/indent-blankline.nvim'
   use 'editorconfig/editorconfig-vim'
 
-  use 'ojroques/nvim-hardline'
-  use 'sainnhe/sonokai'
-  use 'sainnhe/everforest'
-  use 'joshdick/onedark.vim'
-  use 'drewtempelmeyer/palenight.vim'
-  use 'rakr/vim-one'
-  use 'w0ng/vim-hybrid'
-  use 'romainl/Apprentice'
-  use 'junegunn/seoul256.vim'
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use 'nvim-treesitter/nvim-treesitter-textobjects'
+  use 'nvim-treesitter/nvim-treesitter-context'
 
-  use 'AlessandroYorba/Sierra'
+  use 'ojroques/nvim-hardline'
+
+  use 'sainnhe/sonokai'
+
+  use 'sotte/presenting.vim'
 end)

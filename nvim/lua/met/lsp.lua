@@ -66,14 +66,6 @@ vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', op
 vim.api.nvim_set_keymap('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
 
 local on_attach = function(client, bufnr)
-  if client.server_capabilities.signatureHelpProvider then
-    require('lsp-overloads').setup(client, {
-      ui = {
-        border = "none"
-      },
-    })
-  end
-
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
@@ -98,10 +90,17 @@ require('lspconfig')['csharp_ls'].setup {
   capabilities = capabilities
 }
 
-require('lspconfig')['tsserver'].setup {
-  on_attach = on_attach,
-  capabilities = capabilities
-}
+require('typescript').setup({
+  disable_commands = false,
+  debug = false,
+  go_to_source_definition = {
+      fallback = true,
+  },
+  server = {
+      capabilities = capabilities,
+      on_attach = on_attach,
+  },
+})
 
 require('lspconfig')['sumneko_lua'].setup {
   on_attach = on_attach,

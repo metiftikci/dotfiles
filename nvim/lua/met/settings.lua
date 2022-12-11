@@ -22,3 +22,4 @@ vim.opt.tabstop = 2                                        -- Number of spaces t
 vim.opt.termguicolors = true                               -- True color support
 vim.opt.wildmode = {'list', 'longest'}                     -- Command-line completion mode
 vim.opt.wrap = false                                       -- Disable line wrap
+vim.g.netrw_banner = 0                                     -- Disable explorer banner
