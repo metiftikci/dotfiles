@@ -28,8 +28,6 @@ require('packer').startup(function()
   use 'tpope/vim-surround'
 
   use 'lewis6991/gitsigns.nvim'
-  use 'braxtons12/blame_line.nvim'
-  use 'mg979/vim-visual-multi'
   use 'lukas-reineke/indent-blankline.nvim'
   use 'editorconfig/editorconfig-vim'
 
