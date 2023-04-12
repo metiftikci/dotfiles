@@ -20,6 +20,7 @@ require('packer').startup(function()
   use 'saadparwaiz1/cmp_luasnip'
 
   use 'nvim-telescope/telescope.nvim'
+  use 'nvim-telescope/telescope-live-grep-args.nvim'
   use 'nvim-telescope/telescope-file-browser.nvim'
   use 'nvim-telescope/telescope-ui-select.nvim'
 
@@ -29,7 +30,6 @@ require('packer').startup(function()
 
   use 'lewis6991/gitsigns.nvim'
   use 'lukas-reineke/indent-blankline.nvim'
-  use 'editorconfig/editorconfig-vim'
 
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'nvim-treesitter/nvim-treesitter-textobjects'
@@ -38,6 +38,4 @@ require('packer').startup(function()
   use 'ojroques/nvim-hardline'
 
   use 'sainnhe/sonokai'
-
-  use 'sotte/presenting.vim'
 end)
