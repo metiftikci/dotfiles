@@ -3,7 +3,7 @@ local cmp = require('cmp')
 cmp.setup({
   snippet = {
     expand = function(args)
-      require('luasnip').lsp_expand(args.body)
+      vim.fn["vsnip#anonymous"](args.body)
     end,
   },
   mapping = cmp.mapping.preset.insert({
@@ -16,7 +16,8 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'nvim_lua' },
-    { name = 'luasnip' },
+    { name = 'vsnip' },
+  }, {
     { name = 'buffer' },
   }),
   formatting = {
@@ -24,9 +25,8 @@ cmp.setup({
       vim_item.menu = ({
         buffer = '[Buffer]',
         nvim_lsp = '[LSP]',
-        luasnip = '[LuaSnip]',
+        vsnip = '[Vsnip]',
         nvim_lua = '[Lua]',
-        latex_symbols = '[Latex]',
       })[entry.source.name]
 
       return vim_item
@@ -48,9 +48,9 @@ cmp.setup.cmdline('/', {
 cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
-    { name = 'path' }
+    { name = 'path' },
   }, {
-    { name = 'cmdline' }
+    { name = 'cmdline' },
   })
 })
 
@@ -83,7 +83,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 require('lspconfig')['csharp_ls'].setup {
   on_attach = on_attach,
-  capabilities = capabilities
+  capabilities = capabilities,
 }
 
 require('typescript').setup({
@@ -100,7 +100,7 @@ require('typescript').setup({
 
 require('lspconfig')['lua_ls'].setup {
   on_attach = on_attach,
-  capabilities = capabilities
+  capabilities = capabilities,
 }
 
 local null_ls = require('null-ls')

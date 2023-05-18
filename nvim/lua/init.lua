@@ -1,8 +1,0 @@
-require('met.plugins')
-require('met.lsp')
-require('met.telescope')
-require('met.treesitter')
-require('met.setup')
-require('met.settings')
-require('met.mappings')
-require('met.colorscheme')
