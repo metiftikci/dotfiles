@@ -17,6 +17,9 @@ require('packer').startup(function(use)
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'jose-elias-alvarez/typescript.nvim'
 
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
+
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-live-grep-args.nvim'
   use 'nvim-telescope/telescope-file-browser.nvim'

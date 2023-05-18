@@ -1,1 +1,1 @@
-require('plugins')
+require('met.plugins')

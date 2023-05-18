@@ -1,1 +1,1 @@
-require('setup')
+require('met.lsp.setup')
