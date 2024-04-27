@@ -7,6 +7,11 @@ require('telescope').setup {
       auto_quoting = true,
     },
   },
+  defaults = {
+    borderchars = { "┈", "┊", "┈", "┊", "┌", "┐", "┘", "└" },
+    prompt_prefix = '  ',
+    selection_caret = '» ',
+  },
 }
 
 require('telescope').load_extension('live_grep_args')
