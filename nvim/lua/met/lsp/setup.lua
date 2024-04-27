@@ -77,13 +77,40 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>p', '<cmd>lua vim.lsp.buf.format()<CR>', opts)
+
+  client.server_capabilities.semanticTokensProvider = nil
 end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-require('lspconfig')['csharp_ls'].setup {
+-- require('lspconfig')['csharp_ls'].setup {
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+-- }
+
+require('lspconfig').omnisharp.setup {
+  cmd = { "C:\\Bin\\omnisharp\\OmniSharp.exe" },
+
   on_attach = on_attach,
   capabilities = capabilities,
+
+  settings = {
+    FormattingOptions = {
+      EnableEditorConfigSupport = true,
+      OrganizeImports = nil,
+    },
+    MsBuild = {
+      LoadProjectsOnDemand = nil,
+    },
+    RoslynExtensionsOptions = {
+      EnableAnalyzersSupport = false,
+      EnableImportCompletion = false,
+      AnalyzeOpenDocumentsOnly = nil,
+    },
+    Sdk = {
+      IncludePrereleases = true,
+    },
+  },
 }
 
 require('typescript').setup({
