@@ -13,3 +13,7 @@ vim.api.nvim_set_keymap('n', '<leader>fb', '<cmd>Telescope buffers<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>Telescope help_tags<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>fx', '<cmd>Telescope file_browser<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>fs', '<cmd>Telescope treesitter<CR>', opts)
+
+vim.api.nvim_set_keymap('v', '<leader>ff', '"hy\\ff<c-r>h', {})
+vim.api.nvim_set_keymap('v', '<leader>fg', '"hy\\fg<c-r>h', {})
+vim.api.nvim_set_keymap('v', '<leader>r', '"hy:%s/<c-r>h//g<left><left>', { noremap = true })
