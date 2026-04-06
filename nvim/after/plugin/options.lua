@@ -1,3 +1,4 @@
+vim.cmd('language en_US')
 vim.opt.colorcolumn = '120'                                -- Show ruler on 120. column
 vim.opt.completeopt = {'menuone', 'noinsert', 'noselect'}  -- Completion options (for deoplete)
 vim.opt.expandtab = true                                   -- Use spaces instead of tabs

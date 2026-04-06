@@ -1,1 +1,1 @@
-require('hardline').setup {}
+require("hardline").setup({})
