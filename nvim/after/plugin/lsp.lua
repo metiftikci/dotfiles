@@ -79,27 +79,27 @@ end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-require('lspconfig')['ts_ls'].setup({
+vim.lsp.config('ts_ls', {
   capabilities = capabilities,
   on_attach = on_attach,
 })
 
-require('lspconfig')['lua_ls'].setup({
+vim.lsp.config('lua_ls', {
   capabilities = capabilities,
   on_attach = on_attach,
 })
 
-require('lspconfig')['rust_analyzer'].setup({
+vim.lsp.config('rust_analyzer', {
   capabilities = capabilities,
   on_attach = on_attach,
 })
 
-require('lspconfig')['gopls'].setup({
+vim.lsp.config('gopls', {
   capabilities = capabilities,
   on_attach = on_attach,
 })
 
--- require('lspconfig')['omnisharp'].setup {
+-- vim.lsp.config('omnisharp', {
 --   cmd = { "C:\\Bin\\omnisharp\\OmniSharp.exe" },
 -- 
 --   on_attach = on_attach,
@@ -145,7 +145,7 @@ require('lspconfig')['gopls'].setup({
 --       IncludePrereleases = true,
 --     },
 --   },
--- }
+-- })
 
 -- dotnet tool install -g roslyn-language-server --prerelease
 -- dotnet tool install -g roslynator.dotnet.cli
